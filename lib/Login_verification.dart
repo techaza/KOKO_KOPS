@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'profile.dart';
 
 class Login_verification extends StatelessWidget {
   const Login_verification({super.key});
@@ -73,7 +74,11 @@ your privacy. Please enter the verification
             height: 10,
           ),
           ElevatedButton(
-            onPressed: (() {}),
+            onPressed: (() {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return profile();
+              }));
+            }),
             child: Text('VERIFY'),
             style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,

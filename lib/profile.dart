@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:guard/sign_in_work.dart';
 
 class profile extends StatelessWidget {
   const profile({super.key});
@@ -53,7 +54,11 @@ class profile extends StatelessWidget {
 KOKO terms of use and privacy policy'''),
           ),
           ElevatedButton(
-            onPressed: (() {}),
+            onPressed: (() {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return sign_in_work();
+              }));
+            }),
             child: Text('REGISTER'),
             style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,

@@ -1,27 +1,24 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:guard/Loginpage.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      color: Colors.red[400],
-      child: Column(
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 2.4,
-          ),
+    return AnimatedSplashScreen(
+        backgroundColor: Colors.orange,
+        duration: 4000,
+        splashTransition: SplashTransition.scaleTransition,
+        pageTransitionType: PageTransitionType.bottomToTop,
+        splash: Column(children: [
           Text(
             'KOKO',
             style: TextStyle(
                 color: Colors.white,
-                fontSize: 80,
+                fontSize: 30,
                 fontWeight: FontWeight.bold,
                 decoration: TextDecoration.none),
           ),
@@ -29,12 +26,11 @@ class SplashScreen extends StatelessWidget {
             'K O P S',
             style: TextStyle(
                 color: Colors.white,
-                fontSize: 25,
-                fontFamily: "MagicalStylish",
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
                 decoration: TextDecoration.none),
           ),
-        ],
-      ),
-    );
+        ]),
+        nextScreen: Login());
   }
 }

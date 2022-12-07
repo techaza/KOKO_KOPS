@@ -112,7 +112,8 @@ class Guard extends StatelessWidget {
                   SizedBox(
                     height: 15,
                   ),
-                  Grid()
+                  Grid(
+                  )
                 ],
               ),
             ),
